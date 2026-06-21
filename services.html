@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | Orchards Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+
+:root{
+--green:#C8E43B;
+--black:#000;
+--white:#fff;
+--dark:#0d0d0d;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(20px);
+z-index:1000;
+}
+
+.logo{
+font-size:2rem;
+font-weight:800;
+color:var(--green);
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:var(--green);
+}
+
+.hero{
+min-height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 8%;
+}
+
+.hero h1{
+font-family:Anton;
+font-size:8rem;
+line-height:.9;
+text-transform:uppercase;
+}
+
+.hero span{
+color:var(--green);
+}
+
+.hero p{
+max-width:700px;
+margin:25px auto 0;
+color:#aaa;
+font-size:1.1rem;
+}
+
+.section{
+padding:120px 8%;
+}
+
+.section-title{
+font-family:Anton;
+font-size:4rem;
+margin-bottom:60px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.service-card{
+background:#0d0d0d;
+padding:50px 40px;
+border:1px solid #1d1d1d;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+border-color:var(--green);
+}
+
+.service-number{
+font-family:Anton;
+font-size:4rem;
+color:var(--green);
+opacity:.25;
+margin-bottom:20px;
+}
+
+.service-card h3{
+font-size:1.8rem;
+margin-bottom:20px;
+}
+
+.service-card p{
+color:#999;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.service-card ul{
+list-style:none;
+}
+
+.service-card ul li{
+padding:8px 0;
+color:#ddd;
+}
+
+.process{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-top:50px;
+}
+
+.step{
+padding:40px;
+background:#111;
+border:1px solid #222;
+}
+
+.step h2{
+font-family:Anton;
+font-size:3rem;
+color:var(--green);
+margin-bottom:20px;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.plan{
+background:#111;
+padding:50px;
+border:1px solid #222;
+transition:.4s;
+}
+
+.plan:hover{
+border-color:var(--green);
+transform:translateY(-10px);
+}
+
+.plan.featured{
+border:2px solid var(--green);
+}
+
+.plan h3{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.price{
+font-family:Anton;
+font-size:4rem;
+color:var(--green);
+margin-bottom:20px;
+}
+
+.plan ul{
+list-style:none;
+margin:30px 0;
+}
+
+.plan li{
+padding:10px 0;
+color:#bbb;
+}
+
+.btn{
+display:inline-block;
+padding:16px 35px;
+background:var(--green);
+color:black;
+font-weight:700;
+text-decoration:none;
+}
+
+.cta{
+padding:140px 8%;
+text-align:center;
+}
+
+.cta h2{
+font-family:Anton;
+font-size:5rem;
+line-height:1;
+margin-bottom:20px;
+}
+
+.cta span{
+color:var(--green);
+}
+
+footer{
+padding:60px 8%;
+background:#050505;
+text-align:center;
+color:#888;
+}
+
+.cursor{
+position:fixed;
+width:20px;
+height:20px;
+background:var(--green);
+border-radius:50%;
+pointer-events:none;
+mix-blend-mode:difference;
+z-index:9999;
+}
+
+@media(max-width:991px){
+
+.hero h1{
+font-size:4rem;
+}
+
+.services-grid,
+.process,
+.pricing{
+grid-template-columns:1fr;
+}
+
+.cta h2{
+font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<header>
+
+<div class="logo">ORCHARDS STUDIO</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html" class="active">Services</a>
+<a href="work.html">Work</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>
+PREMIUM <span>SERVICES</span>
+</h1>
+
+<p>
+We help ambitious brands create unforgettable identities,
+high-converting websites and strategic creative systems
+designed for long-term growth.
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+WHAT WE OFFER
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-number">01</div>
+
+<h3>Website Design</h3>
+
+<p>
+Custom websites built to elevate your brand,
+increase trust and generate more inquiries.
+</p>
+
+<ul>
+<li>✓ UI/UX Design</li>
+<li>✓ Responsive Development</li>
+<li>✓ SEO Optimization</li>
+<li>✓ Conversion Strategy</li>
+</ul>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-number">02</div>
+
+<h3>Brand Identity</h3>
+
+<p>
+Distinctive visual identities crafted to position
+your business as a category leader.
+</p>
+
+<ul>
+<li>✓ Logo Design</li>
+<li>✓ Brand Strategy</li>
+<li>✓ Visual Systems</li>
+<li>✓ Brand Guidelines</li>
+</ul>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-number">03</div>
+
+<h3>Creative Direction</h3>
+
+<p>
+Premium creative concepts and visual storytelling
+that make your brand impossible to ignore.
+</p>
+
+<ul>
+<li>✓ Campaign Concepts</li>
+<li>✓ Art Direction</li>
+<li>✓ Social Content</li>
+<li>✓ Launch Strategy</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+OUR PROCESS
+</h2>
+
+<div class="process">
+
+<div class="step">
+<h2>01</h2>
+<h3>Discover</h3>
+<p>Understanding your business and goals.</p>
+</div>
+
+<div class="step">
+<h2>02</h2>
+<h3>Strategy</h3>
+<p>Building a roadmap for growth.</p>
+</div>
+
+<div class="step">
+<h2>03</h2>
+<h3>Create</h3>
+<p>Designing premium visual experiences.</p>
+</div>
+
+<div class="step">
+<h2>04</h2>
+<h3>Launch</h3>
+<p>Delivering and optimizing for success.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+INVESTMENT
+</h2>
+
+<div class="pricing">
+
+<div class="plan">
+
+<h3>Starter</h3>
+
+<div class="price">$2K+</div>
+
+<ul>
+<li>Brand Identity</li>
+<li>Landing Page</li>
+<li>Basic Strategy</li>
+<li>2 Weeks Delivery</li>
+</ul>
+
+<a href="#" class="btn">Get Started</a>
+
+</div>
+
+<div class="plan featured">
+
+<h3>Growth</h3>
+
+<div class="price">$5K+</div>
+
+<ul>
+<li>Full Brand System</li>
+<li>Custom Website</li>
+<li>SEO Setup</li>
+<li>Content Direction</li>
+</ul>
+
+<a href="#" class="btn">Most Popular</a>
+
+</div>
+
+<div class="plan">
+
+<h3>Signature</h3>
+
+<div class="price">$10K+</div>
+
+<ul>
+<li>Complete Brand Experience</li>
+<li>Custom Development</li>
+<li>Creative Direction</li>
+<li>Ongoing Support</li>
+</ul>
+
+<a href="#" class="btn">Book Call</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+READY TO BUILD A <span>WORLD-CLASS BRAND?</span>
+</h2>
+
+<p>
+Let's create something remarkable together.
+</p>
+
+<br>
+
+<a href="#" class="btn">
+START YOUR PROJECT
+</a>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Orchards Studio. Designed to stand out.
+</p>
+
+</footer>
+
+<script>
+
+gsap.from(".hero h1",{
+opacity:0,
+y:100,
+duration:1.2
+});
+
+gsap.from(".service-card",{
+opacity:0,
+y:80,
+stagger:.2,
+duration:1
+});
+
+const cursor=document.querySelector(".cursor");
+
+window.addEventListener("mousemove",(e)=>{
+
+gsap.to(cursor,{
+x:e.clientX,
+y:e.clientY,
+duration:.2
+});
+
+});
+
+</script>
+
+</body>
+</html>

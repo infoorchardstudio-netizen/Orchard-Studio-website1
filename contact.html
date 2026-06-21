@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Orchards Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+
+:root{
+--green:#C8E43B;
+--black:#000;
+--white:#fff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(20px);
+z-index:1000;
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:800;
+color:var(--green);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--green);
+}
+
+.contact-hero{
+padding:180px 8% 100px;
+text-align:center;
+}
+
+.contact-hero h1{
+font-family:'Anton',sans-serif;
+font-size:7rem;
+line-height:.9;
+text-transform:uppercase;
+}
+
+.contact-hero span{
+color:var(--green);
+}
+
+.contact-hero p{
+max-width:700px;
+margin:25px auto;
+color:#aaa;
+font-size:1.1rem;
+}
+
+.contact-wrapper{
+padding:0 8% 120px;
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:60px;
+}
+
+.contact-info{
+background:#0c0c0c;
+border:1px solid #1a1a1a;
+padding:50px;
+border-radius:20px;
+}
+
+.contact-info h2{
+font-family:'Anton';
+font-size:3rem;
+margin-bottom:30px;
+}
+
+.info-box{
+margin-bottom:35px;
+}
+
+.info-box h4{
+color:var(--green);
+margin-bottom:10px;
+}
+
+.info-box p{
+color:#aaa;
+line-height:1.8;
+}
+
+.contact-form{
+background:#0c0c0c;
+border:1px solid #1a1a1a;
+padding:50px;
+border-radius:20px;
+}
+
+.form-group{
+margin-bottom:25px;
+}
+
+input,
+textarea{
+width:100%;
+padding:18px;
+background:#111;
+border:1px solid #222;
+color:white;
+font-size:1rem;
+outline:none;
+transition:.4s;
+}
+
+input:focus,
+textarea:focus{
+border-color:var(--green);
+}
+
+textarea{
+height:180px;
+resize:none;
+}
+
+button{
+padding:18px 40px;
+background:var(--green);
+border:none;
+font-weight:700;
+cursor:pointer;
+font-size:1rem;
+transition:.4s;
+}
+
+button:hover{
+transform:translateY(-5px);
+}
+
+.socials{
+display:flex;
+gap:15px;
+margin-top:30px;
+}
+
+.socials a{
+width:50px;
+height:50px;
+background:#111;
+border:1px solid #222;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:white;
+transition:.4s;
+}
+
+.socials a:hover{
+background:var(--green);
+color:black;
+}
+
+footer{
+padding:50px 8%;
+border-top:1px solid #111;
+text-align:center;
+color:#777;
+}
+
+.glow{
+position:absolute;
+width:500px;
+height:500px;
+background:var(--green);
+filter:blur(180px);
+opacity:.08;
+top:20%;
+left:-10%;
+pointer-events:none;
+}
+
+.glow2{
+position:absolute;
+width:500px;
+height:500px;
+background:var(--green);
+filter:blur(180px);
+opacity:.08;
+bottom:0;
+right:-10%;
+pointer-events:none;
+}
+
+@media(max-width:991px){
+
+.contact-hero h1{
+font-size:4rem;
+}
+
+.contact-wrapper{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<header>
+
+<div class="logo">
+ORCHARDS STUDIO
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Services</a>
+<a href="#">Work</a>
+<a href="#">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="contact-hero">
+
+<h1>
+LET'S BUILD<br>
+<span>SOMETHING GREAT</span>
+</h1>
+
+<p>
+Ready to elevate your brand with premium design,
+strategy and digital experiences? We'd love to hear
+about your project.
+</p>
+
+</section>
+
+<section class="contact-wrapper">
+
+<div class="contact-info">
+
+<h2>GET IN TOUCH</h2>
+
+<div class="info-box">
+<h4>Email</h4>
+<p>hello@orchardsstudio.com</p>
+</div>
+
+<div class="info-box">
+<h4>Phone</h4>
+<p>+91 98765 43210</p>
+</div>
+
+<div class="info-box">
+<h4>Location</h4>
+<p>India • Working Worldwide</p>
+</div>
+
+<div class="info-box">
+<h4>Response Time</h4>
+<p>Within 24 Hours</p>
+</div>
+
+<div class="socials">
+<a href="#">IG</a>
+<a href="#">BE</a>
+<a href="#">LI</a>
+<a href="#">DR</a>
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<form>
+
+<div class="form-group">
+<input type="text" placeholder="Your Name" required>
+</div>
+
+<div class="form-group">
+<input type="email" placeholder="Your Email" required>
+</div>
+
+<div class="form-group">
+<input type="text" placeholder="Company Name">
+</div>
+
+<div class="form-group">
+<input type="text" placeholder="Budget Range">
+</div>
+
+<div class="form-group">
+<textarea placeholder="Tell us about your project"></textarea>
+</div>
+
+<button type="submit">
+SEND INQUIRY
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Orchards Studio. All Rights Reserved.
+</footer>
+
+<script>
+
+gsap.from(".contact-hero h1",{
+opacity:0,
+y:80,
+duration:1.2
+});
+
+gsap.from(".contact-hero p",{
+opacity:0,
+y:40,
+delay:.4,
+duration:1
+});
+
+gsap.from(".contact-info",{
+opacity:0,
+x:-100,
+duration:1.2,
+delay:.6
+});
+
+gsap.from(".contact-form",{
+opacity:0,
+x:100,
+duration:1.2,
+delay:.6
+});
+
+</script>
+
+</body>
+</html>

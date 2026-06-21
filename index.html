@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orchards Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+
+:root{
+--green:#C8E43B;
+--black:#000;
+--white:#fff;
+--dark:#0d0d0d;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--green);
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(20px);
+}
+
+.logo{
+font-size:2rem;
+font-weight:800;
+color:var(--green);
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--green);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+}
+
+.hero-left{
+width:55%;
+}
+
+.hero-left h1{
+font-family:Anton,sans-serif;
+font-size:8rem;
+line-height:.9;
+text-transform:uppercase;
+}
+
+.hero-left span{
+color:var(--green);
+}
+
+.hero-left p{
+max-width:600px;
+margin-top:25px;
+font-size:1.1rem;
+color:#bbb;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:18px 35px;
+text-decoration:none;
+font-weight:700;
+border:2px solid var(--green);
+transition:.4s;
+}
+
+.btn-primary{
+background:var(--green);
+color:black;
+}
+
+.btn-secondary{
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.hero-right{
+width:40%;
+}
+
+.hero-right img{
+width:100%;
+border-radius:20px;
+}
+
+.marquee{
+background:var(--green);
+color:black;
+padding:20px 0;
+overflow:hidden;
+white-space:nowrap;
+font-weight:700;
+}
+
+.track{
+display:inline-block;
+animation:scroll 20s linear infinite;
+}
+
+@keyframes scroll{
+from{transform:translateX(0)}
+to{transform:translateX(-50%)}
+}
+
+.section{
+padding:120px 8%;
+}
+
+.section-title{
+font-family:Anton;
+font-size:4rem;
+margin-bottom:60px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.card{
+background:#111;
+padding:40px;
+border:1px solid #222;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--green);
+}
+
+.card h3{
+color:var(--green);
+margin-bottom:20px;
+font-size:1.5rem;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.project{
+position:relative;
+overflow:hidden;
+}
+
+.project img{
+width:100%;
+display:block;
+transition:.6s;
+}
+
+.project:hover img{
+transform:scale(1.1);
+}
+
+.project-info{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:25px;
+background:linear-gradient(transparent,black);
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.about h2{
+font-family:Anton;
+font-size:5rem;
+line-height:1;
+}
+
+.about span{
+color:var(--green);
+}
+
+.cta{
+background:var(--green);
+padding:80px;
+color:black;
+text-align:center;
+}
+
+.cta h2{
+font-family:Anton;
+font-size:5rem;
+margin-bottom:20px;
+}
+
+footer{
+padding:60px 8%;
+background:#050505;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+
+.cursor{
+position:fixed;
+width:20px;
+height:20px;
+background:var(--green);
+border-radius:50%;
+pointer-events:none;
+z-index:9999;
+mix-blend-mode:difference;
+}
+
+@media(max-width:991px){
+
+.hero{
+flex-direction:column;
+padding-top:140px;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+}
+
+.hero-left h1{
+font-size:4rem;
+}
+
+.services,
+.projects,
+.about,
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.cta h2{
+font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<header>
+<div class="logo">ORCHARDS STUDIO</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="work.html">Work</a>
+<a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1><br>
+WE BUILD BRANDS THAT
+<span>DEMAND ATTENTION.</span>
+</h1>
+
+<p><p style="text-transform: uppercase;"></p>
+Orchards Studio is a premium branding,
+website design and creative direction
+agency helping modern brands stand out.
+</p>
+
+<div class="buttons">
+
+<a href="#" class="btn btn-primary">
+START PROJECT
+</a>
+
+<a href="#" class="btn btn-secondary">
+VIEW WORK
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+<img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931" alt="">
+</div>
+
+</section>
+
+<div class="marquee">
+<div class="track">
+ORCHARDS STUDIO • WEBSITE DESIGN • BRAND STRATEGY • CREATIVE DIRECTION • DIGITAL EXPERIENCES • WEBSITE DESIGN • BRAND STRATEGY •
+</div>
+</div>
+
+<section class="section">
+
+<h2 class="section-title">
+WHAT WE DO
+</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>01</h3>
+<h4>Website Design</h4>
+<p>High converting custom websites.</p>
+</div>
+
+<div class="card">
+<h3>02</h3>
+<h4>Brand Identity</h4>
+<p>Logos, strategy and visual systems.</p>
+</div>
+
+<div class="card">
+<h3>03</h3>
+<h4>Creative Direction</h4>
+<p>Premium visual storytelling.</p>
+</div>
+
+<div class="card">
+<h3>04</h3>
+<h4>Growth Marketing</h4>
+<p>Campaigns that generate revenue.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+SELECTED PROJECTS
+</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
+<div class="project-info">
+<h3>Elevate</h3>
+<p>Luxury Fashion Brand</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<div class="project-info">
+<h3>Nexa</h3>
+<p>Technology Startup</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+<div class="project-info">
+<h3>Aurelia</h3>
+<p>Beauty Brand</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section about">
+
+<div>
+<h2>
+NOT JUST DESIGNERS.<br>
+WE BUILD <span>BRANDS.</span>
+</h2>
+</div>
+
+<div>
+<p>
+We create premium digital experiences,
+modern visual identities and conversion
+focused websites that help businesses grow.
+</p>
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+READY TO GROW YOUR BRAND?
+</h2>
+
+<p>
+Let's build something remarkable together.
+</p>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>ORCHARDS STUDIO</h3>
+</div>
+
+<div>
+<h4>Services</h4>
+<p>Branding</p>
+<p>Web Design</p>
+<p>Creative Direction</p>
+</div>
+
+<div>
+<h4>Studio</h4>
+<p>About</p>
+<p>Work</p>
+<p>Contact</p>
+</div>
+
+<div>
+<h4>Email</h4>
+<p>hello@orchardsstudio.com</p>
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+gsap.from(".hero h1",{
+opacity:0,
+y:100,
+duration:1.2
+});
+
+gsap.from(".hero p",{
+opacity:0,
+y:40,
+delay:.5,
+duration:1
+});
+
+gsap.from(".btn",{
+opacity:0,
+y:20,
+delay:.8,
+stagger:.2
+});
+
+const cursor=document.querySelector(".cursor");
+
+window.addEventListener("mousemove",(e)=>{
+
+gsap.to(cursor,{
+x:e.clientX,
+y:e.clientY,
+duration:.2
+});
+
+});
+
+</script>
+
+</body>
+</html>
